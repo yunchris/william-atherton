@@ -8,18 +8,29 @@
 
 .newsCopyContainer {
   flex-direction: column;
-  margin-top: 2rem;
   padding: 1rem;
 }
 
 .newsTitle {
   background-color: #933333;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
   padding-left: .5rem;
   padding-right: .5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   width: fit-content;
   color: white;
+}
+
+.project {
+  flex-direction: row;
+}
+
+.bullet {
+  color: #933333;
+  /* flex-basis: 5%; */
+  padding-right: 1rem;
 }
 
 .newsGraphicContainer {
@@ -47,7 +58,11 @@
 
   .newsCopyContainer {
     flex-basis: 40%;
-    padding: 0;
+    padding-right: 3rem;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: scroll;
   }
 
   .newsGraphicContainer {

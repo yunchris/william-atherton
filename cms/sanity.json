@@ -4,7 +4,7 @@
     "name": "William Atherton"
   },
   "api": {
-    "projectId": "7tv2og00",
+    "projectId": "rhgqcj9t",
     "dataset": "production"
   },
   "plugins": [
@@ -12,7 +12,8 @@
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "@sanity/color-input"
   ],
   "env": {
     "development": {

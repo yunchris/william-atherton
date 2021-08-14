@@ -8,8 +8,14 @@
   border-color: #933333;
 }
 
-.sanityList {
-  padding-bottom: 1rem;
-  padding-left: 2rem;
-  list-style-position: outside;
+.sanityList ul {
+  margin-block-start: 0rem;
+}
+
+.sanityBlock {
+  flex-direction: column;
+}
+
+.sanityBlockCopy {
+  padding-bottom: .5rem;
 }

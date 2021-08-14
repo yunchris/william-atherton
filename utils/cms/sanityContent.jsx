@@ -1,7 +1,7 @@
 import React from 'react'
 import imageUrlBuilder from '@sanity/image-url'
 import BlockContent from '@sanity/block-content-to-react'
-import sanityClient from '../../../lib/sanity'
+import sanityClient from './sanityClient'
 import styles from '../../styles/sanity.module.css'
 
 export const getCMSData = async (query, params) => {
@@ -29,10 +29,6 @@ const textStyles = {
 // Customize render of Sanity content blocks
 const serializer = {
   types: {
-    image: (props) => {
-      const { node } = props
-      return <img src={urlFor(node).fit('scale').url()} mb="1rem" />
-    },
     block: (props) => {
       const { children, node } = props
       if (node.style === 'blockquote')
@@ -42,9 +38,9 @@ const serializer = {
           </blockquote>
         )
       return (
-        <div>
+        <span className={styles.sanityBlockCopy}>
           {children}
-        </div>
+        </span>
       )
     },
   },
@@ -75,14 +71,16 @@ const serializer = {
         <a href={mark.href}>{children}</a>
       )
     },
-    internalLink: (props) => {
-      const { children, mark } = props
-      return <a href={`/${mark.slug.current}`}>{children}</a>
-    },
+    color: (props) => {
+      const {children, mark} = props
+      return (
+        <span style={{color: mark.hex}}>{children}</span>
+      )
+    }
   },
 }
 
 // Function to serialize and render custom FE for content blocks
 export const customBlock = (data) => {
-  return <BlockContent blocks={data} serializers={serializer} />
+  return <BlockContent blocks={data} serializers={serializer} className={styles.sanityBlock}/>
 }
