@@ -1,0 +1,15 @@
+/* Sanity Content styles */
+
+.sanityBlockquote {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  font-size: 18px;
+  border-left-width: 3px;
+  border-color: #933333;
+}
+
+.sanityList {
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  list-style-position: outside;
+}

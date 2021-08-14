@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+/cms/node_modules
+.next
+.vscode
 /.pnp
 .pnp.js
 

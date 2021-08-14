@@ -2,12 +2,21 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Montserrat, sans-serif;
+  font-family: Arial, sans-serif;
+  line-height: 1.5
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+div {
+  display: flex;
 }
 
 * {
@@ -22,8 +31,8 @@ a {
 /* Page layout */
 .container {
   min-height: 100vh;
+  width: 100%;
   margin: 0rem;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -32,20 +41,11 @@ a {
   overflow-y: auto;
 }
 
-.pageContainer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  overflow: scroll;
-}
-
 /* Navbar */
 .navbar {
   font-size: 22px;
+  font-family: Montserrat;
   padding-top: 2rem;
-  display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 300px;
@@ -57,42 +57,6 @@ a {
   transition: ease .2s;
 }
 
-/* Home page */
-
-.homeContainer {
-  height: 100vh;
-}
-
-.homeTitle {
-  padding-top: 3rem;
-  font-family: 'Pelican';
-  font-size: 56px;
-  text-align: center;
-  color: #444444;
-}
-
-.homeGraphic {
-  height: 100%;
-  position: relative;
-  padding-bottom: '2rem'
-}
-
-/* Bio page */
-.bioTitle {
-  padding-top: 1rem;
-  padding-left: 2.5rem;
-  font-size: 55px;
-  color: #c78d5b;
-}
-
-.bioGraphic {
-  height: 100%;
-  /* position: relative; */
-}
-
-.bioCopy {
-  padding: 1rem;
-}
 
 /* Large devices (laptops/desktops, 1080 and up) */
 @media only screen and (min-width: 1080px) {
@@ -100,7 +64,6 @@ a {
     min-height: 100vh;
     height: 100vh;
     padding: 0 0.5rem;
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -110,64 +73,14 @@ a {
 
   .navbar {
     font-size: 22px;
-    padding-top: 6rem;
-    display: flex;
+    padding-top: 4rem;
     flex-direction: row;
     justify-content: flex-start;
     width: 1080px;
     margin: auto;
   }
-  
-  .pageContainer {
-    display: flex;
-    flex-direction: row;
-    width: 1080px;
-    height: 100%;
-    margin: auto;
-    overflow: scroll;
-  }
 
   .pageButtons {
     padding-right: 5rem;
   }
-
-
-  .homeContainer {
-    overflow: hidden;
-  }
-
-  .home {
-    display: flex;
-    flex-direction: row;
-    max-width: 1080px;
-    margin: auto;
-    overflow: hidden;
-  }
-
-  .homeTitle {
-    flex-basis: 50%;
-    padding-top: 5rem;
-    font-family: 'Pelican';
-    font-size: 90px;
-    color: #444444;
-  }
-
-  .homeGraphic {
-    flex-basis: 50%;
-    height: 100vh;
-    position: relative;
-    padding-bottom: '2rem';
-  }
-
-  .image {
-    /* object-fit: cover !important; */
-    flex-basis: 50%;
-    height: 100vh;
-    position: relative;
-    min-width: 110% !important;
-    margin-left: -50px !important;
-    padding-bottom: 5rem !important;
-  }
 }
-
-
