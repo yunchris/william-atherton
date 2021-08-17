@@ -17,15 +17,6 @@ export const urlFor = (source) => {
   return builder.image(source)
 }
 
-// Customize font sizes and styles for serializer here
-const textStyles = {
-  h1: '32px',
-  h2: '28px',
-  h3: '22px',
-  h4: '20px',
-  normal: '18px',
-}
-
 // Customize render of Sanity content blocks
 const serializer = {
   types: {

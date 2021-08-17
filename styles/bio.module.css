@@ -64,6 +64,12 @@
     flex-basis: 50%;
     padding-left: 2rem;
     overflow: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .bioCopy::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
   }
 
   .image {
