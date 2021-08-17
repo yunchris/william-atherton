@@ -58,8 +58,8 @@ div {
 }
 
 
-/* Large devices (laptops/desktops, 1080 and up) */
-@media only screen and (min-width: 1080px) {
+/* Large devices (laptops/desktops, 1150 and up) */
+@media only screen and (min-width: 1150px) {
   .container {
     min-height: 100vh;
     height: 100vh;
@@ -76,7 +76,7 @@ div {
     padding-top: 4rem;
     flex-direction: row;
     justify-content: flex-start;
-    width: 1080px;
+    width: 1150px;
     margin: auto;
   }
 

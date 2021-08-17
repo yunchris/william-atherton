@@ -9,6 +9,9 @@
 
 .bioGraphicContainer {
   flex-direction: column;
+  height: 70vh;
+  top: 2rem;
+  position: relative;
 }
 
 .bioTitle {
@@ -20,19 +23,20 @@
 }
 
 .bioCopy {
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .image {
   height: auto;
   width: 100%;
+  padding-bottom: 0px !important;
 }
 
-/* Large devices (laptops/desktops, 1080 and up) */
-@media only screen and (min-width: 1080px) {
+/* Large devices (laptops/desktops, 1150 and up) */
+@media only screen and (min-width: 1150px) {
   .bioContainer {
     flex-direction: row;
-    width: 1080px;
+    width: 1150px;
     height: 100%;
     margin: auto;
     overflow: hidden;
@@ -42,7 +46,7 @@
 
   
   .bioGraphicContainer {
-    flex-basis: 40%;
+    flex-basis: 50%;
     height: 100vh;
     position: relative;
   }
@@ -57,7 +61,7 @@
   }
 
   .bioCopy {
-    flex-basis: 60%;
+    flex-basis: 50%;
     padding-left: 2rem;
     overflow: scroll;
   }
@@ -69,6 +73,5 @@
     position: relative;
     top: 0;
     left: 0;
-    padding-bottom: 5rem !important;
   }
 }

@@ -1,4 +1,5 @@
 import MainLayout from '../layout'
+import Image from "next/image";
 import styles from '../styles/home.module.css'
 import { getHomePageCMSData } from '../utils/cms/api';
 import { urlFor } from '../utils/cms/sanityContent'
@@ -25,7 +26,12 @@ const Home = (props) => {
       <div className={styles.homeContainer}>
         <div className={styles.homeTitle}>{homePageContent?.title}</div>
         <div className={styles.homeGraphicContainer}>
-          <img src={urlFor(homePageContent?.backgroundImage).url()} className={styles.image}/>
+          <Image 
+            src={urlFor(homePageContent?.backgroundImage).url()} className={styles.image}
+            alt="Home Background Image - William Atherton"
+            layout="fill"
+            objectFit="contain"
+          />
         </div>
       </div>
     </MainLayout>

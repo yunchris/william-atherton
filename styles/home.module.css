@@ -19,16 +19,17 @@
 }
 
 .image {
-  max-height: 65vh;
+  top: 100px !important;
+  min-height: 70vh !important;
   width: auto;
   margin: auto;
 }
 
-/* Large devices (laptops/desktops, 1080 and up) */
-@media only screen and (min-width: 1080px) {
+/* Large devices (laptops/desktops, 1150 and up) */
+@media only screen and (min-width: 1150px) {
   .homeContainer {
     flex-direction: row;
-    width: 1080px;
+    width: 1150px;
     height: 100%;
     margin: auto;
     overflow: hidden;
@@ -46,13 +47,14 @@
   .homeGraphicContainer {
     flex-basis: 50%;
     height: 100vh;
+    position: relative;
     padding-bottom: '2rem';
   }
 
   .image {
-    max-height: 100vh;
+    min-height: 100vh !important;
     min-width: 110% !important;
     margin-left: -50px !important;
-    padding-bottom: 5rem !important;
+    margin-top: -100px !important;
   }
 }

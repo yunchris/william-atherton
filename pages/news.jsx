@@ -1,5 +1,5 @@
-import React from 'react';
 import MainLayout from '../layout/';
+import Image from "next/image";
 import styles from '../styles/news.module.css';
 import { getNewsPageCMSData } from '../utils/cms/api'
 import { customBlock } from '../utils/cms/sanityContent';
@@ -37,8 +37,24 @@ export default function News(props) {
           ))}
         </div>
         <div className={styles.newsGraphicContainer}>
-          <img src="/bgNews.png" className={styles.bgImage} />
-          <img src="/photostrip.jpeg" className={styles.bottomImage} />
+          <Image
+            src="/bgNews.png"
+            className={styles.bgImage}
+            alt="News Background Image - William Atherton"
+            width={825}
+            height={820}
+            layout="responsive"
+            objectFit="contain"
+          />
+          <Image
+            src="/photostrip.jpeg"
+            className={styles.bottomImage}
+            alt="News Reel Image - William Atherton"
+            width={796}
+            height={119}
+            layout="responsive"
+            objectFit="contain"
+          />
         </div>
       </div>
     </MainLayout>

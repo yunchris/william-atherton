@@ -1,4 +1,5 @@
 import MainLayout from '../layout/';
+import Image from "next/image";
 import styles from '../styles/bio.module.css'
 import { getBioPageCMSData } from '../utils/cms/api'
 import { urlFor, customBlock } from '../utils/cms/sanityContent';
@@ -25,8 +26,13 @@ export default function Bio(props) {
       <div className={styles.bioContainer}>
         <div className={styles.bioGraphicContainer}>
           <div className={styles.bioTitle}>{bioPageContent?.title}</div>
-          <img
+          <Image
             src={urlFor(bioPageContent?.backgroundImage).url()}
+            alt="Bio Background Image - William Atherton"
+            width={722}
+            height={1024}
+            layout="responsive"
+            objectFit="contain"
             className={styles.image}
           />
         </div>

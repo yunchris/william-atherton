@@ -35,22 +35,23 @@
 
 .newsGraphicContainer {
   flex-direction: column;
+  position: relative;
 }
 
 .bgImage {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .bottomImage {
   padding-top: 2rem;
 }
 
-/* Large devices (laptops/desktops, 1080 and up) */
-@media only screen and (min-width: 1080px) {
+/* Large devices (laptops/desktops, 1150 and up) */
+@media only screen and (min-width: 1150px) {
   .newsContainer {
     flex-direction: row;
-    width: 1080px;
+    width: 1150px;
     height: 100%;
     margin: auto;
     overflow: hidden;
@@ -67,6 +68,7 @@
 
   .newsGraphicContainer {
     flex-basis: 60%;
+    justify-content: space-between;
   }
 
   .bottomImage {
