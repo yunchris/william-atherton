@@ -1,12 +1,21 @@
 import MainLayout from '../layout/';
 import Image from "next/image";
 import styles from '../styles/news.module.css';
-import { getNewsPageCMSData } from '../utils/cms/api'
-import { customBlock } from '../utils/cms/sanityContent';
+import {
+  getNewsPageCMSData,
+  getAppearancesCMSData,
+  getInterviewsCMSData,
+  getFactsCMSData,
+} from "../utils/api";
+import { customBlock } from '../utils/sanityContent';
 
 export async function getStaticProps() {
   const newsPageContent = await getNewsPageCMSData();
-  if (!newsPageContent) {
+  const appearancesContent = await getAppearancesCMSData();
+  const interviewsContent = await getInterviewsCMSData();
+  const factsContent = await getFactsCMSData();
+
+  if (!newsPageContent || !appearancesContent || !interviewsContent) {
     return {
       redirect: {
         destination: "/",
@@ -15,11 +24,23 @@ export async function getStaticProps() {
     };
   }
 
-  return { props: { newsPageContent } }; 
+  return {
+    props: {
+      newsPageContent,
+      appearancesContent,
+      interviewsContent,
+      factsContent,
+    },
+  }; 
 }
 
 export default function News(props) {
-  const { newsPageContent } = props;
+  const {
+    newsPageContent,
+    appearancesContent,
+    interviewsContent,
+    factsContent,
+  } = props;
   
   return (
     <MainLayout
@@ -30,9 +51,32 @@ export default function News(props) {
         <div className={styles.newsCopyContainer}>
           <div className={styles.newsTitle}>Recent Projects</div>
           {newsPageContent?.map((project, index) => (
-            <div className={styles.project} key={index}>
+            <div className={styles.item} key={index}>
               <div className={styles.bullet}>◆</div>
               <div>{customBlock(project.newsCopy)}</div>
+            </div>
+          ))}
+          <div className={styles.sectionTitle}>RECENT APPEARANCES</div>
+          {appearancesContent?.map((appearance, index) => (
+            <div className={styles.item} key={index}>
+              <div className={styles.bullet}>◆</div>
+              <div>{customBlock(appearance.appearanceCopy)}</div>
+            </div>
+          ))}
+          <div className={styles.sectionTitle}>RECENT INTERVIEWS</div>
+          {interviewsContent?.map((interview, index) => (
+            <div className={styles.item} key={index}>
+              <div className={styles.bullet}>◆</div>
+              <div>{customBlock(interview.interviewCopy)}</div>
+            </div>
+          ))}
+          <div className={styles.sectionTitle}>DID YOU KNOW?</div>
+          {factsContent?.map((fact, index) => (
+            <div className={styles.item} key={index}>
+              <div className={styles.bullet}>◆</div>
+              <div>
+                {customBlock(fact.factsCopy)}
+              </div>
             </div>
           ))}
         </div>

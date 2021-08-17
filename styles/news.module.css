@@ -11,6 +11,15 @@
   padding: 1rem;
 }
 
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #933333;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  text-decoration: underline;
+}
+
 .newsTitle {
   background-color: #933333;
   font-size: 22px;
@@ -23,7 +32,7 @@
   color: white;
 }
 
-.project {
+.item {
   flex-direction: row;
 }
 
@@ -62,7 +71,7 @@
     padding-right: 3rem;
     padding-left: 0;
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 4rem;
     overflow: scroll;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */

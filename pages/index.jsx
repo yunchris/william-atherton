@@ -1,8 +1,8 @@
 import MainLayout from '../layout'
 import Image from "next/image";
 import styles from '../styles/home.module.css'
-import { getHomePageCMSData } from '../utils/cms/api';
-import { urlFor } from '../utils/cms/sanityContent'
+import { getHomePageCMSData } from '../utils/api';
+import { urlFor } from '../utils/sanityContent'
 
 export async function getStaticProps() {
   const homePageContent = await getHomePageCMSData();

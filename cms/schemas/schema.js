@@ -7,10 +7,16 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // Schema for blockContent
 import blockContent from './blockContent'
 
+// Schema for video
+import video from './video'
+
 // Types for the single pages
 import home from './home'
 import bio from './bio'
 import news from './news'
+import appearances from './appearances'
+import interviews from './interviews'
+import facts from './facts'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -22,6 +28,10 @@ export default createSchema({
     home,
     bio,
     news,
+    appearances,
+    interviews,
+    facts,
     blockContent,
+    video,
   ]),
 })

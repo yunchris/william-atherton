@@ -1,8 +1,8 @@
 import MainLayout from '../layout/';
 import Image from "next/image";
 import styles from '../styles/bio.module.css'
-import { getBioPageCMSData } from '../utils/cms/api'
-import { urlFor, customBlock } from '../utils/cms/sanityContent';
+import { getBioPageCMSData } from '../utils/api'
+import { urlFor, customBlock } from "../utils/sanityContent";
 
 export async function getStaticProps() {
   const bioPageContent = await getBioPageCMSData();

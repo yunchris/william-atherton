@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/asset-utils": "^1.1.5",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/image-url": "^0.140.22",
     "next": "^11.1.0",
