@@ -1,6 +1,6 @@
 export default {
   name: "appearances",
-  title: "Appearances - News Page",
+  title: "News Page: Appearances",
   type: "document",
   fields: [
     {

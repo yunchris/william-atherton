@@ -13,7 +13,7 @@ import video from './video'
 // Types for the single pages
 import home from './home'
 import bio from './bio'
-import news from './news'
+import projects from './projects'
 import appearances from './appearances'
 import interviews from './interviews'
 import facts from './facts'
@@ -27,7 +27,7 @@ export default createSchema({
   types: schemaTypes.concat([
     home,
     bio,
-    news,
+    projects,
     appearances,
     interviews,
     facts,

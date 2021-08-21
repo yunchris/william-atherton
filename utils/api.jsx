@@ -7,7 +7,7 @@ const GET_HOME_PAGE_QUERY = groq`*[_type == "home"][0]{title, backgroundImage}`;
 
 const GET_BIO_PAGE_QUERY = groq`*[_type == "bio"][0]{title, backgroundImage, bioCopy}`;
 
-const GET_NEWS_PAGE_QUERY = groq`*[_type == "news"] | order(publishDate desc){newsCopy}`;
+const GET_PROJECTS_QUERY = groq`*[_type == "projects"] | order(publishDate desc){projectCopy}`;
 
 const GET_APPEARANCES_QUERY = groq`*[_type == "appearances"] | order(publishDate desc){appearanceCopy}`;
 
@@ -29,8 +29,8 @@ export const getBioPageCMSData = async () => {
 };
 
 // News Page query
-export const getNewsPageCMSData = async ()=> {
-  return getCMSData(GET_NEWS_PAGE_QUERY, {});
+export const getProjectsCMSData = async ()=> {
+  return getCMSData(GET_PROJECTS_QUERY, {});
 };
 
 // Appearances query

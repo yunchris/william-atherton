@@ -1,6 +1,6 @@
 export default {
   name: "interviews",
-  title: "Interviews - News Page",
+  title: "News Page: Interviews",
   type: "document",
   fields: [
     {

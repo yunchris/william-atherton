@@ -2,7 +2,7 @@ import MainLayout from '../layout/';
 import Image from "next/image";
 import styles from '../styles/news.module.css';
 import {
-  getNewsPageCMSData,
+  getProjectsCMSData,
   getAppearancesCMSData,
   getInterviewsCMSData,
   getFactsCMSData,
@@ -10,12 +10,12 @@ import {
 import { customBlock } from '../utils/sanityContent';
 
 export async function getStaticProps() {
-  const newsPageContent = await getNewsPageCMSData();
+  const projectsContent = await getProjectsCMSData();
   const appearancesContent = await getAppearancesCMSData();
   const interviewsContent = await getInterviewsCMSData();
   const factsContent = await getFactsCMSData();
 
-  if (!newsPageContent || !appearancesContent || !interviewsContent) {
+  if (!projectsContent) {
     return {
       redirect: {
         destination: "/",
@@ -26,7 +26,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      newsPageContent,
+      projectsContent,
       appearancesContent,
       interviewsContent,
       factsContent,
@@ -36,7 +36,7 @@ export async function getStaticProps() {
 
 export default function News(props) {
   const {
-    newsPageContent,
+    projectsContent,
     appearancesContent,
     interviewsContent,
     factsContent,
@@ -50,7 +50,7 @@ export default function News(props) {
       <div className={styles.newsContainer}>
         <div className={styles.newsCopyContainer}>
           <div className={styles.newsTitle}>Recent Projects</div>
-          {newsPageContent?.map((project, index) => (
+          {projectsContent?.map((project, index) => (
             <div className={styles.item} key={index}>
               <div className={styles.bullet}>◆</div>
               <div>{customBlock(project.newsCopy)}</div>
@@ -74,9 +74,7 @@ export default function News(props) {
           {factsContent?.map((fact, index) => (
             <div className={styles.item} key={index}>
               <div className={styles.bullet}>◆</div>
-              <div>
-                {customBlock(fact.factsCopy)}
-              </div>
+              <div>{customBlock(fact.factsCopy)}</div>
             </div>
           ))}
         </div>

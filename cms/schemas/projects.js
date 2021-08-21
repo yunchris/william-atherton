@@ -1,6 +1,6 @@
 export default {
-  name: "news",
-  title: "News Page",
+  name: "projects",
+  title: "News Page: Projects",
   type: "document",
   fields: [
     {
@@ -12,11 +12,11 @@ export default {
       name: "publishDate",
       title: "Publish Date",
       type: "date",
-      description: "Sorted by Date (newest first)"
+      description: "Sorted by Date (newest first)",
     },
     {
-      name: "newsCopy",
-      title: "News Copy",
+      name: "projectCopy",
+      title: "Project Copy",
       type: "blockContent",
     },
   ],
