@@ -20,14 +20,19 @@ export async function getStaticProps() {
 
 const Home = (props) => {
   const { homePageContent } = props;
+  const imageLoader = ({width}) => {
+    return `${urlFor(homePageContent?.backgroundImage).url()}?w=${width}`;
+  };
 
   return (
     <MainLayout title="William Atherton Home" description="William Atherton">
       <div className={styles.homeContainer}>
         <div className={styles.homeTitle}>{homePageContent?.title}</div>
         <div className={styles.homeGraphicContainer}>
-          <Image 
-            src={urlFor(homePageContent?.backgroundImage).url()} className={styles.image}
+          <Image
+            loader={imageLoader}
+            src={urlFor(homePageContent?.backgroundImage).url()}
+            className={styles.image}
             alt="Home Background Image - William Atherton"
             layout="fill"
             objectFit="contain"

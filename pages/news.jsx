@@ -2,20 +2,23 @@ import MainLayout from '../layout/';
 import Image from "next/image";
 import styles from '../styles/news.module.css';
 import {
+  getNewsPageCMSData,
   getProjectsCMSData,
   getAppearancesCMSData,
   getInterviewsCMSData,
   getFactsCMSData,
 } from "../utils/api";
 import { customBlock } from '../utils/sanityContent';
+import { urlFor } from "../utils/sanityContent";
 
 export async function getStaticProps() {
+  const newsPageCMSContent = await getNewsPageCMSData()
   const projectsContent = await getProjectsCMSData();
   const appearancesContent = await getAppearancesCMSData();
   const interviewsContent = await getInterviewsCMSData();
   const factsContent = await getFactsCMSData();
 
-  if (!projectsContent) {
+  if (!newsPageCMSContent) {
     return {
       redirect: {
         destination: "/",
@@ -26,6 +29,7 @@ export async function getStaticProps() {
 
   return {
     props: {
+      newsPageCMSContent,
       projectsContent,
       appearancesContent,
       interviewsContent,
@@ -36,12 +40,19 @@ export async function getStaticProps() {
 
 export default function News(props) {
   const {
+    newsPageCMSContent,
     projectsContent,
     appearancesContent,
     interviewsContent,
     factsContent,
   } = props;
-  
+  const imageLoaderBackground = ({width}) => {
+    return `${urlFor(newsPageCMSContent?.backgroundImage).url()}?w=${width}`;
+  };
+
+  const imageLoaderBottom = ({width}) => {
+    return `${urlFor(newsPageCMSContent?.bottomImage).url()}?w=${width}`;
+  };
   return (
     <MainLayout
       title="William Atherton News"
@@ -49,28 +60,36 @@ export default function News(props) {
     >
       <div className={styles.newsContainer}>
         <div className={styles.newsCopyContainer}>
-          <div className={styles.newsTitle}>Recent Projects</div>
+          <div className={styles.newsTitle}>
+            {newsPageCMSContent?.projectsTitle}
+          </div>
           {projectsContent?.map((project, index) => (
             <div className={styles.item} key={index}>
               <div className={styles.bullet}>◆</div>
               <div>{customBlock(project.newsCopy)}</div>
             </div>
           ))}
-          <div className={styles.sectionTitle}>RECENT APPEARANCES</div>
+          <div className={styles.sectionTitle}>
+            {newsPageCMSContent?.appearancesTitle}
+          </div>
           {appearancesContent?.map((appearance, index) => (
             <div className={styles.item} key={index}>
               <div className={styles.bullet}>◆</div>
               <div>{customBlock(appearance.appearanceCopy)}</div>
             </div>
           ))}
-          <div className={styles.sectionTitle}>RECENT INTERVIEWS</div>
+          <div className={styles.sectionTitle}>
+            {newsPageCMSContent?.interviewsTitle}
+          </div>
           {interviewsContent?.map((interview, index) => (
             <div className={styles.item} key={index}>
               <div className={styles.bullet}>◆</div>
               <div>{customBlock(interview.interviewCopy)}</div>
             </div>
           ))}
-          <div className={styles.sectionTitle}>DID YOU KNOW?</div>
+          <div className={styles.sectionTitle}>
+            {newsPageCMSContent?.triviaTitle}
+          </div>
           {factsContent?.map((fact, index) => (
             <div className={styles.item} key={index}>
               <div className={styles.bullet}>◆</div>
@@ -80,6 +99,7 @@ export default function News(props) {
         </div>
         <div className={styles.newsGraphicContainer}>
           <Image
+            loader={imageLoaderBackground}
             src="/bgNews.png"
             className={styles.bgImage}
             alt="News Background Image - William Atherton"
@@ -89,6 +109,7 @@ export default function News(props) {
             objectFit="contain"
           />
           <Image
+            loader={imageLoaderBottom}
             src="/photostrip.jpeg"
             className={styles.bottomImage}
             alt="News Reel Image - William Atherton"

@@ -20,6 +20,9 @@ export async function getStaticProps() {
 
 export default function Bio(props) {
   const { bioPageContent } = props;
+  const imageLoader = ({width}) => {
+    return `${urlFor(bioPageContent?.backgroundImage).url()}?w=${width}`;
+  };
 
   return (
     <MainLayout title="William Atherton Bio" description="William Atherton Bio">
@@ -27,6 +30,7 @@ export default function Bio(props) {
         <div className={styles.bioGraphicContainer}>
           <div className={styles.bioTitle}>{bioPageContent?.title}</div>
           <Image
+            loader={imageLoader}
             src={urlFor(bioPageContent?.backgroundImage).url()}
             alt="Bio Background Image - William Atherton"
             width={722}
@@ -36,7 +40,7 @@ export default function Bio(props) {
             className={styles.image}
           />
         </div>
-        <div className={styles.bioCopy} style={{paddingTop: '4rem'}}>
+        <div className={styles.bioCopy} style={{ paddingTop: "4rem" }}>
           {customBlock(bioPageContent?.bioCopy)}
         </div>
       </div>

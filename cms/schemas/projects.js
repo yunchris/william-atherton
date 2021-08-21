@@ -1,5 +1,5 @@
 export default {
-  name: "projects",
+  name: "news",
   title: "News Page: Projects",
   type: "document",
   fields: [
@@ -15,7 +15,7 @@ export default {
       description: "Sorted by Date (newest first)",
     },
     {
-      name: "projectCopy",
+      name: "newsCopy",
       title: "Project Copy",
       type: "blockContent",
     },
