@@ -32,6 +32,7 @@ export default function Bio(props) {
           <Image
             loader={imageLoader}
             src={urlFor(bioPageContent?.backgroundImage).url()}
+            priority={true}
             alt="Bio Background Image - William Atherton"
             width={722}
             height={1024}

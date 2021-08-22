@@ -32,6 +32,7 @@ const Home = (props) => {
           <Image
             loader={imageLoader}
             src={urlFor(homePageContent?.backgroundImage).url()}
+            priority={true}
             className={styles.image}
             alt="Home Background Image - William Atherton"
             layout="fill"

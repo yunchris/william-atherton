@@ -101,6 +101,7 @@ export default function News(props) {
           <Image
             loader={imageLoaderBackground}
             src="/bgNews.png"
+            priority={true}
             className={styles.bgImage}
             alt="News Background Image - William Atherton"
             width={825}
@@ -111,6 +112,7 @@ export default function News(props) {
           <Image
             loader={imageLoaderBottom}
             src="/photostrip.jpeg"
+            priority={true}
             className={styles.bottomImage}
             alt="News Reel Image - William Atherton"
             width={796}
