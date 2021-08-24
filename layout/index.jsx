@@ -6,7 +6,7 @@ export default function MainLayout({...props}) {
     <div className="container">
       <Head>
         <meta name="description" content={props.description} />
-        <meta name="keywords" content="William Atherton"/>
+        <meta name="keywords" content="William Atherton Website, William Atherton Projects, William Atherton Interviews"/>
 
         {/* Open Graph */}
         <meta property="og:url" content="https://williamatherton.com" key="ogurl" />

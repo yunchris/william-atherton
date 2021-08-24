@@ -10,6 +10,8 @@ import {
 } from "../utils/api";
 import { customBlock } from '../utils/sanityContent';
 import { urlFor } from "../utils/sanityContent";
+import backgroundImage from "../public/bgNews.png";
+import photoStrip from "../public/photostrip.jpeg";
 
 export async function getStaticProps() {
   const newsPageCMSContent = await getNewsPageCMSData()
@@ -100,8 +102,8 @@ export default function News(props) {
         <div className={styles.newsGraphicContainer}>
           <Image
             loader={imageLoaderBackground}
-            src="/bgNews.png"
-            priority={true}
+            src={backgroundImage}
+            priority
             className={styles.bgImage}
             alt="News Background Image - William Atherton"
             width={825}
@@ -111,8 +113,8 @@ export default function News(props) {
           />
           <Image
             loader={imageLoaderBottom}
-            src="/photostrip.jpeg"
-            priority={true}
+            src={photoStrip}
+            priority
             className={styles.bottomImage}
             alt="News Reel Image - William Atherton"
             width={796}
