@@ -3,7 +3,6 @@ import Image from "next/image";
 import styles from '../styles/bio.module.css'
 import { getBioPageCMSData } from '../utils/api'
 import { urlFor, customBlock } from "../utils/sanityContent";
-import backgroundImage from "../public/bgBio.png";
 
 export async function getStaticProps() {
   const bioPageContent = await getBioPageCMSData();
@@ -32,7 +31,7 @@ export default function Bio(props) {
           <div className={styles.bioTitle}>{bioPageContent?.title}</div>
           <Image
             loader={imageLoader}
-            src={backgroundImage}
+            src={urlFor(bioPageContent?.backgroundImage).url()}
             priority
             alt="Bio Background Image - William Atherton"
             width={722}

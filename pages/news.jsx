@@ -113,7 +113,7 @@ export default function News(props) {
           />
           <Image
             loader={imageLoaderBottom}
-            src={photoStrip}
+            src="/photostrip.jpeg"
             priority
             className={styles.bottomImage}
             alt="News Reel Image - William Atherton"
