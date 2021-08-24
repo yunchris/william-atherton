@@ -3,5 +3,6 @@ module.exports = {
   images: {
     domains: ["cdn.sanity.com"],
     loader: "custom",
+    minimumCacheTTL: 6000,
   },
 };
