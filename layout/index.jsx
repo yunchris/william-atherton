@@ -30,7 +30,7 @@ export default function MainLayout({...props}) {
           as="font"
           crossOrigin="true"
         />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
       {props.children}
